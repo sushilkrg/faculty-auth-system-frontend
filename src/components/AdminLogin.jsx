@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const AdminLogin = () => {
@@ -28,8 +28,19 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <div className="w-full max-w-md space-y-8 rounded-xl bg-white p-10 shadow">
+    <div className="container min-h-screen mx-auto pt-4">
+      <div className="flex justify-between items-center">
+        <h2 className="mb-6 text-2xl font-bold">Faculty Authentication</h2>
+        <Link to="/">
+          <button
+            // onClick={Navigate to=''}
+            className="rounded-md bg-gray-500 px-3 py-2 text-sm font-medium text-white hover:bg-red-600"
+          >
+            Faculty Auth
+          </button>
+        </Link>
+      </div>
+      <div className="w-full mx-auto mt-8 max-w-md space-y-8 rounded-xl bg-white p-10 shadow">
         <div>
           <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
             Admin Login

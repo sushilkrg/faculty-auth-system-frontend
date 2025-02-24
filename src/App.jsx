@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AdminLogin from './components/AdminLogin';
 import Dashboard from './components/Dashboard';
 import AddFaculty from './components/AddFaculty';
@@ -38,7 +38,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-100">
         <Routes>
-          <Route path="/" element={<AdminLogin />} />
+          <Route path="/" element={<FacultyAuth />} />
           <Route
             path="/dashboard"
             element={
@@ -56,11 +56,11 @@ function App() {
             }
           />
           <Route
-            path="/faculty-auth"
+            path="/admin"
             element={
-              <ProtectedRoute>
-                <FacultyAuth />
-              </ProtectedRoute>
+              // <ProtectedRoute>
+                <AdminLogin />
+              // </ProtectedRoute>
             }
           />
         </Routes>
